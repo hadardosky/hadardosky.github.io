@@ -1,0 +1,425 @@
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	line-height: 1.5;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+figure {
+	margin: 0;
+}
+
+
+/* =========================================
+   GLOBAL FIXED HEADER
+   ========================================= */
+
+/* Only the first header on each page */
+
+body > header:first-of-type {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80px;
+	background-color: lightgray;
+	text-align: center;
+	z-index: 1000;
+}
+
+body > header:first-of-type h1 {
+	margin: 0;
+	padding: 20px;
+}
+
+
+/* =========================================
+   GLOBAL FIXED FOOTER
+   ========================================= */
+
+body > footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background-color: lightgray;
+	text-align: center;
+	z-index: 1000;
+}
+
+body > footer ul {
+	margin: 0;
+	padding: 15px;
+	list-style: none;
+}
+
+body > footer li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+
+/* =========================================
+   GLOBAL WRAPPER SPACING
+   ========================================= */
+
+#wrapper {
+	margin-top: 100px;
+	margin-bottom: 90px;
+}
+
+
+/* =========================================
+   BASIC NAVIGATION
+   ========================================= */
+
+aside nav ul {
+	margin: 0;
+	padding: 15px;
+	list-style: none;
+}
+
+aside nav li {
+	margin-bottom: 10px;
+}
+
+aside nav a {
+	text-decoration: none;
+}
+
+
+/* =========================================
+   BASIC ARTICLE STYLES
+   ========================================= */
+
+article {
+	padding: 15px;
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+
+article header figure img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	object-position: center;
+}
+
+article section figure img {
+	width: 250px;
+	height: 180px;
+	object-fit: cover;
+	object-position: center;
+}
+
+
+/* =========================================
+   HOMEPAGE
+   ========================================= */
+
+.home-page #wrapper {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.home-page aside {
+	float: left;
+	width: 200px;
+}
+
+.home-page main {
+	float: right;
+	width: 670px;
+}
+
+.home-page #wrapper::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/* =========================================
+   PAGE ONE
+   FIXED / ABSOLUTE POSITION LAYOUT
+   ========================================= */
+
+.page-one #wrapper {
+	position: relative;
+	width: 1000px;
+	height: 650px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-one aside {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 220px;
+	padding: 10px;
+}
+
+.page-one .articles {
+	position: absolute;
+	top: 0;
+	left: 250px;
+	width: 730px;
+	height: 620px;
+	overflow-y: scroll;
+}
+
+.page-one article {
+	position: relative;
+	width: 690px;
+	height: 550px;
+	overflow-y: auto;
+	margin-bottom: 20px;
+}
+
+.page-one article section figure {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+}
+
+
+/* =========================================
+   PAGE TWO
+   FLOATING PIXEL LAYOUT
+   ========================================= */
+
+.page-two #wrapper {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-two aside {
+	float: left;
+	width: 220px;
+	padding: 10px;
+	margin-right: 30px;
+}
+
+.page-two .articles {
+	float: left;
+	width: 750px;
+}
+
+.page-two article {
+	width: 750px;
+}
+
+.page-two article section figure {
+	float: left;
+	width: 250px;
+	margin-right: 15px;
+	margin-bottom: 10px;
+}
+
+.page-two article section figure:nth-of-type(even) {
+	float: right;
+	margin-left: 15px;
+	margin-right: 0;
+}
+
+.page-two #wrapper::after,
+.page-two article::after,
+.page-two article section::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.page-two footer {
+	clear: both;
+}
+
+
+/* =========================================
+   PAGE THREE
+   RESPONSIVE FLOATING LAYOUT
+   ========================================= */
+
+.page-three #wrapper {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.page-three aside {
+	float: left;
+	width: 22%;
+	padding: 2%;
+	margin-right: 3%;
+}
+
+.page-three .articles {
+	float: left;
+	width: 75%;
+}
+
+.page-three article {
+	width: 100%;
+}
+
+.page-three article section figure {
+	float: left;
+	width: 35%;
+	margin-right: 3%;
+	margin-bottom: 2%;
+}
+
+.page-three article section figure:nth-of-type(even) {
+	float: right;
+	margin-left: 3%;
+	margin-right: 0;
+}
+
+.page-three #wrapper::after,
+.page-three article::after,
+.page-three article section::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+
+/* =========================================
+   PAGE FOUR
+   INLINE-BLOCK LAYOUT
+   ========================================= */
+
+.page-four #wrapper {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 0;
+}
+
+.page-four aside,
+.page-four .articles {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+.page-four aside {
+	width: 22%;
+	padding: 2%;
+	margin-right: 3%;
+}
+
+.page-four .articles {
+	width: 75%;
+}
+
+.page-four article {
+	width: 100%;
+}
+
+.page-four article section figure {
+	display: inline-block;
+	vertical-align: top;
+	width: 35%;
+	margin-right: 3%;
+	margin-bottom: 2%;
+}
+
+
+/* =========================================
+   PAGE FIVE
+   INLINE-BLOCK PHOTO GALLERY
+   ========================================= */
+
+.page-five #wrapper {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 0;
+}
+
+.page-five aside,
+.page-five #wrapper > section {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+.page-five aside {
+	width: 20%;
+	margin-right: 3%;
+}
+
+.page-five #wrapper > section {
+	width: 77%;
+}
+
+.gallery {
+	font-size: 0;
+}
+
+.gallery figure {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 29%;
+	margin: 2%;
+	padding: 5px;
+	border: 1px solid black;
+	font-size: 16px;
+}
+
+.gallery figure img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	object-position: center;
+}
+
+.gallery figcaption {
+	text-align: center;
+	padding: 5px;
+}
+
+.gallery figure:hover figcaption {
+	background-color: lightgray;
+}
+
+
+/* =========================================
+   RESPONSIVE ADJUSTMENT FOR PAGE THREE
+   ========================================= */
+
+@media screen and (max-width: 700px) {
+
+	.page-three aside,
+	.page-three .articles {
+		float: none;
+		width: 100%;
+		margin-right: 0;
+	}
+
+	.page-three article section figure,
+	.page-three article section figure:nth-of-type(even) {
+		float: none;
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
