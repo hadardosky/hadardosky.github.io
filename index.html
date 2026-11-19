@@ -1,98 +1,164 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<title>Home | Hadar Dosky</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta
-			name="description"
-			content="Practice Site 4 by Hadar Dosky, demonstrating several CSS layout techniques."
-		>
-		<link rel="stylesheet" href="main.css">
-	</head>
+<head>
+    <title>Beyond the Screen | Video Games & Well-Being</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exploring when and how video games can support health and well-being.">
+    <link rel="stylesheet" href="main.css">
+</head>
 
-	<body class="home-page">
+<body class="home-page">
 
-		<!-- Fixed first header -->
-		<header class="site-header">
-			<h1>Test</h1>
-		</header>
+    <!-- Site Header -->
+    <header class="site-header">
+        <a class="site-logo" href="index.html">BEYOND THE SCREEN<span>.</span></a>
 
-		<!-- Main page wrapper -->
-		<div id="wrapper">
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#social">Social Gaming</a>
+            <a href="#violence">Violence</a>
+            <a href="#exergames">Exergames</a>
+            <a href="#takeaway">The Takeaway</a>
+        </nav>
+    </header>
 
-			<!-- Site navigation -->
-			<aside>
-			<nav>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="one.html">Page One</a></li>
-					<li><a href="two.html">Page Two</a></li>
-					<li><a href="three.html">Page Three</a></li>
-					<li><a href="four.html">Page Four</a></li>
-					<li><a href="five.html">Page Five</a></li>
-				</ul>
-			</nav>
-		</aside>
+    <main>
 
-			<!-- Introduction -->
-			<main class="home-content">
+        <!-- Hero / Homepage Introduction -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow">GAMING • HEALTH • WELL-BEING</p>
 
-				<article>
-					<header>
-						<figure>
-							<img
-								src="img/banner3.png"
-								alt="Decorative banner for Practice Site 4"
-							>
-						</figure>
+                <h1>Can Video Games<br>Actually Be <span>Good for You?</span></h1>
 
-						<h2>Welcome to My Practice Site</h2>
-					</header>
+                <p class="hero-description">
+                    Video games get a pretty mixed reputation. Some people
+                    see them as a waste of time, while others see them as
+                    a way to connect, learn, and stay active. So what's
+                    actually happening beyond the screen?
+                </p>
 
-					<section>
-						<figure class="article-image">
-							<img
-								src="img/one.jpg"
-								alt="Visual example representing website layout and design"
-							>
-						</figure>
+                <a class="hero-button" href="#explore">
+                    EXPLORE THE RESEARCH <span>↓</span>
+                </a>
+            </div>
 
-						<p>
-							Welcome to my fourth practice website. My name is Hadar
-							Dosky, and I am an English major at George Mason University
-							with an interest in technical writing.
-						</p>
-					</section>
-				</article>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="visual-circle circle-one"></div>
+                <div class="visual-circle circle-two"></div>
 
-				<!-- Project explanation -->
-				<article>
-					<header>
-						<figure>
-							<img
-								src="img/two.jpg"
-								alt="Visual example representing CSS and website development"
-							>
-						</figure>
+                <div class="visual-card">
+                    <span class="visual-label">THE BIG QUESTION</span>
+                    <span class="visual-symbol">?</span>
+                    <p>It's not as simple as<br>good or bad.</p>
+                </div>
 
-						
-						
-					</section>
-				</article>
+                <span class="floating-word word-one">PLAY</span>
+                <span class="floating-word word-two">CONNECT</span>
+                <span class="floating-word word-three">MOVE</span>
+            </div>
+        </section>
 
-			</main>
-		</div>
+        <!-- Introduction -->
+        <section class="intro-section" id="explore">
+            <p class="eyebrow">LET'S LOOK CLOSER</p>
 
-		<!-- Fixed footer -->
-		<footer class="site-footer">
-			<ul>
-				<li>&copy; 2026 Hadar Dosky</li>
-				<li>Practice Site 4</li>
-				<li>George Mason University</li>
-				<li>Web Design and CSS Layout</li>
-			</ul>
-		</footer>
+            <h2>There's more to gaming than meets the eye.</h2>
 
-	</body>
+            <p>
+                Video games can influence our social lives, physical health,
+                and psychological well-being. But their effects depend on
+                more than just the fact that someone is playing a game.
+                What they're playing, why they're playing, and who they're
+                playing with can all make a difference.
+            </p>
+
+            <p>
+                Research suggests that certain aspects of gaming can
+                support well-being. Let's break down three of them.
+            </p>
+        </section>
+
+        <!-- Main Topics -->
+        <section class="topics-section">
+            <div class="section-heading">
+                <p class="eyebrow">THREE SIDES OF GAMING</p>
+                <h2>What does the research say?</h2>
+                <p>
+                    The article by Halbrook and colleagues explores three
+                    major aspects of video games and their relationship
+                    to well-being.
+                </p>
+            </div>
+
+            <div class="topic-grid">
+
+                <article class="topic-card" id="social">
+                    <div class="topic-number">01</div>
+                    <p class="topic-category">SOCIAL WELL-BEING</p>
+                    <h3>Gaming Together</h3>
+                    <p>
+                        Playing with others can create opportunities for
+                        communication, cooperation, friendship, and
+                        positive social interaction.
+                    </p>
+                    <a href="#social">EXPLORE SOCIAL GAMING <span>↗</span></a>
+                </article>
+
+                <article class="topic-card" id="violence">
+                    <div class="topic-number">02</div>
+                    <p class="topic-category">AGGRESSION & VIOLENCE</p>
+                    <h3>Does Violence Change Us?</h3>
+                    <p>
+                        The relationship between violent video games and
+                        aggression is complicated. Individual and social
+                        circumstances matter, too.
+                    </p>
+                    <a href="#violence">EXPLORE THE DEBATE <span>↗</span></a>
+                </article>
+
+                <article class="topic-card" id="exergames">
+                    <div class="topic-number">03</div>
+                    <p class="topic-category">PHYSICAL WELL-BEING</p>
+                    <h3>Getting Active</h3>
+                    <p>
+                        Exergames combine gaming and physical activity,
+                        offering another way to move while having fun.
+                    </p>
+                    <a href="#exergames">EXPLORE EXERGAMES <span>↗</span></a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Main Takeaway -->
+        <section class="takeaway-section" id="takeaway">
+            <p class="eyebrow">SO, WHAT'S THE POINT?</p>
+
+            <h2>It's not about whether gaming is good or bad.</h2>
+
+            <p>
+                It's about understanding when and how it can affect
+                well-being. Motivation, moderation, social interaction,
+                and the features of a game all play a role.
+            </p>
+
+            <p class="takeaway-emphasis">
+                The game matters. But so does the person playing it.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>BEYOND THE SCREEN<span>.</span></p>
+        <p>
+            Based on research by Halbrook, O'Donnell, and Msetfi (2019).
+        </p>
+        <p>&copy; 2026 Hadar Dosky</p>
+    </footer>
+
+</body>
 </html>

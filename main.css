@@ -1,425 +1,496 @@
-/* =========================================
-   GLOBAL STYLES
-   ========================================= */
+/* ------------------------------
+   GENERAL STYLES
+------------------------------ */
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
 }
 
 body {
-	margin: 0;
-	font-family: Arial, sans-serif;
-	line-height: 1.5;
+    background: #171719;
+    color: #eeeeef;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
 }
 
-img {
-	max-width: 100%;
-	height: auto;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-figure {
-	margin: 0;
+:root {
+    --background: #171719;
+    --surface: #222225;
+    --surface-light: #2b2b30;
+    --pink: #d889a5;
+    --pink-light: #f0b5ca;
+    --text: #eeeeef;
+    --muted: #aaa6ad;
 }
 
+/* ------------------------------
+   HEADER & NAVIGATION
+------------------------------ */
 
-/* =========================================
-   GLOBAL FIXED HEADER
-   ========================================= */
-
-/* Only the first header on each page */
-
-body > header:first-of-type {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 80px;
-	background-color: lightgray;
-	text-align: center;
-	z-index: 1000;
+.site-header {
+    width: 100%;
+    min-height: 75px;
+    padding: 18px 7%;
+    background: #111113;
+    border-bottom: 1px solid #333137;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-body > header:first-of-type h1 {
-	margin: 0;
-	padding: 20px;
+.site-logo {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    white-space: nowrap;
 }
 
-
-/* =========================================
-   GLOBAL FIXED FOOTER
-   ========================================= */
-
-body > footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 70px;
-	background-color: lightgray;
-	text-align: center;
-	z-index: 1000;
+.site-logo span,
+.site-footer span {
+    color: var(--pink);
 }
 
-body > footer ul {
-	margin: 0;
-	padding: 15px;
-	list-style: none;
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
-body > footer li {
-	display: inline-block;
-	margin-right: 20px;
+.site-nav a {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
 }
 
-
-/* =========================================
-   GLOBAL WRAPPER SPACING
-   ========================================= */
-
-#wrapper {
-	margin-top: 100px;
-	margin-bottom: 90px;
+.site-nav a:hover {
+    color: var(--pink-light);
 }
 
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
 
-/* =========================================
-   BASIC NAVIGATION
-   ========================================= */
-
-aside nav ul {
-	margin: 0;
-	padding: 15px;
-	list-style: none;
+.hero {
+    min-height: 590px;
+    padding: 90px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 85% 50%, #49303d 0%, transparent 38%),
+        var(--background);
 }
 
-aside nav li {
-	margin-bottom: 10px;
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
 }
 
-aside nav a {
-	text-decoration: none;
+.eyebrow {
+    color: var(--pink);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
 }
 
-
-/* =========================================
-   BASIC ARTICLE STYLES
-   ========================================= */
-
-article {
-	padding: 15px;
-	border: 1px solid black;
-	margin-bottom: 20px;
+.hero h1 {
+    font-size: clamp(2.7rem, 5.5vw, 5rem);
+    line-height: 1.08;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
 }
 
-article header figure img {
-	width: 100%;
-	height: 180px;
-	object-fit: cover;
-	object-position: center;
+.hero h1 span {
+    color: var(--pink);
 }
 
-article section figure img {
-	width: 250px;
-	height: 180px;
-	object-fit: cover;
-	object-position: center;
+.hero-description {
+    max-width: 570px;
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin-bottom: 35px;
 }
 
-
-/* =========================================
-   HOMEPAGE
-   ========================================= */
-
-.home-page #wrapper {
-	width: 900px;
-	margin-left: auto;
-	margin-right: auto;
+.hero-button {
+    display: inline-block;
+    padding: 13px 22px;
+    background: var(--pink);
+    color: #171719;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    transition: background 0.2s ease;
 }
 
-.home-page aside {
-	float: left;
-	width: 200px;
+.hero-button:hover {
+    background: var(--pink-light);
 }
 
-.home-page main {
-	float: right;
-	width: 670px;
+.hero-button span {
+    margin-left: 12px;
 }
 
-.home-page #wrapper::after {
-	content: "";
-	display: table;
-	clear: both;
+/* Hero decorative graphic */
+
+.hero-visual {
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-/* =========================================
-   PAGE ONE
-   FIXED / ABSOLUTE POSITION LAYOUT
-   ========================================= */
-
-.page-one #wrapper {
-	position: relative;
-	width: 1000px;
-	height: 650px;
-	margin-left: auto;
-	margin-right: auto;
+.visual-circle {
+    position: absolute;
+    border: 1px solid #a66b85;
+    border-radius: 50%;
 }
 
-.page-one aside {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 220px;
-	padding: 10px;
+.circle-one {
+    width: 330px;
+    height: 330px;
+    opacity: 0.35;
 }
 
-.page-one .articles {
-	position: absolute;
-	top: 0;
-	left: 250px;
-	width: 730px;
-	height: 620px;
-	overflow-y: scroll;
+.circle-two {
+    width: 255px;
+    height: 255px;
+    opacity: 0.5;
 }
 
-.page-one article {
-	position: relative;
-	width: 690px;
-	height: 550px;
-	overflow-y: auto;
-	margin-bottom: 20px;
+.visual-card {
+    width: 220px;
+    height: 240px;
+    padding: 25px;
+    background: #30232c;
+    border: 1px solid #80556b;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px #00000055;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: rotate(-5deg);
 }
 
-.page-one article section figure {
-	float: left;
-	margin-right: 15px;
-	margin-bottom: 10px;
+.visual-label {
+    color: var(--pink-light);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    font-weight: 700;
 }
 
-
-/* =========================================
-   PAGE TWO
-   FLOATING PIXEL LAYOUT
-   ========================================= */
-
-.page-two #wrapper {
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
+.visual-symbol {
+    color: var(--pink);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    text-align: center;
 }
 
-.page-two aside {
-	float: left;
-	width: 220px;
-	padding: 10px;
-	margin-right: 30px;
+.visual-card p {
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
 }
 
-.page-two .articles {
-	float: left;
-	width: 750px;
+.floating-word {
+    position: absolute;
+    color: var(--pink-light);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-.page-two article {
-	width: 750px;
+.word-one {
+    top: 20px;
+    right: 0;
 }
 
-.page-two article section figure {
-	float: left;
-	width: 250px;
-	margin-right: 15px;
-	margin-bottom: 10px;
+.word-two {
+    bottom: 30px;
+    left: -5px;
 }
 
-.page-two article section figure:nth-of-type(even) {
-	float: right;
-	margin-left: 15px;
-	margin-right: 0;
+.word-three {
+    top: 50%;
+    right: -25px;
 }
 
-.page-two #wrapper::after,
-.page-two article::after,
-.page-two article section::after {
-	content: "";
-	display: table;
-	clear: both;
+/* ------------------------------
+   INTRODUCTION
+------------------------------ */
+
+.intro-section {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 100px 30px;
+    text-align: center;
 }
 
-.page-two footer {
-	clear: both;
+.intro-section h2,
+.section-heading h2,
+.takeaway-section h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 25px;
 }
 
-
-/* =========================================
-   PAGE THREE
-   RESPONSIVE FLOATING LAYOUT
-   ========================================= */
-
-.page-three #wrapper {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
+.intro-section p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 1rem;
+    margin: 0 auto 15px;
 }
 
-.page-three aside {
-	float: left;
-	width: 22%;
-	padding: 2%;
-	margin-right: 3%;
+/* ------------------------------
+   TOPIC CARDS
+------------------------------ */
+
+.topics-section {
+    padding: 90px 8%;
+    background: #202023;
 }
 
-.page-three .articles {
-	float: left;
-	width: 75%;
+.section-heading {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
 }
 
-.page-three article {
-	width: 100%;
+.section-heading > p:last-child {
+    color: var(--muted);
 }
 
-.page-three article section figure {
-	float: left;
-	width: 35%;
-	margin-right: 3%;
-	margin-bottom: 2%;
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.page-three article section figure:nth-of-type(even) {
-	float: right;
-	margin-left: 3%;
-	margin-right: 0;
+.topic-card {
+    min-height: 340px;
+    padding: 30px;
+    background: var(--surface-light);
+    border: 1px solid #3b373d;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.page-three #wrapper::after,
-.page-three article::after,
-.page-three article section::after {
-	content: "";
-	display: table;
-	clear: both;
+.topic-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--pink);
 }
 
-
-/* =========================================
-   PAGE FOUR
-   INLINE-BLOCK LAYOUT
-   ========================================= */
-
-.page-four #wrapper {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 0;
+.topic-number {
+    color: var(--pink);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 25px;
 }
 
-.page-four aside,
-.page-four .articles {
-	display: inline-block;
-	vertical-align: top;
-	font-size: 16px;
+.topic-category {
+    color: var(--pink-light);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-.page-four aside {
-	width: 22%;
-	padding: 2%;
-	margin-right: 3%;
+.topic-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
 }
 
-.page-four .articles {
-	width: 75%;
+.topic-card > p:not(.topic-category) {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
 }
 
-.page-four article {
-	width: 100%;
+.topic-card a {
+    margin-top: auto;
+    color: var(--pink-light);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-.page-four article section figure {
-	display: inline-block;
-	vertical-align: top;
-	width: 35%;
-	margin-right: 3%;
-	margin-bottom: 2%;
+.topic-card a span {
+    margin-left: 7px;
 }
 
+/* ------------------------------
+   TAKEAWAY
+------------------------------ */
 
-/* =========================================
-   PAGE FIVE
-   INLINE-BLOCK PHOTO GALLERY
-   ========================================= */
-
-.page-five #wrapper {
-	width: 90%;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 0;
+.takeaway-section {
+    padding: 110px 25px;
+    text-align: center;
+    background:
+        linear-gradient(#171719eF, #171719eF),
+        radial-gradient(circle at center, #6b4054, #171719 70%);
 }
 
-.page-five aside,
-.page-five #wrapper > section {
-	display: inline-block;
-	vertical-align: top;
-	font-size: 16px;
+.takeaway-section h2 {
+    max-width: 800px;
+    margin: 0 auto 25px;
 }
 
-.page-five aside {
-	width: 20%;
-	margin-right: 3%;
+.takeaway-section > p:not(.eyebrow) {
+    max-width: 700px;
+    margin: 0 auto 15px;
+    color: var(--muted);
 }
 
-.page-five #wrapper > section {
-	width: 77%;
+.takeaway-section .takeaway-emphasis {
+    color: var(--pink-light);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 30px;
 }
 
-.gallery {
-	font-size: 0;
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+.site-footer {
+    padding: 35px 20px;
+    background: #101012;
+    border-top: 1px solid #333137;
+    text-align: center;
 }
 
-.gallery figure {
-	display: inline-block;
-	vertical-align: top;
-	position: relative;
-	width: 29%;
-	margin: 2%;
-	padding: 5px;
-	border: 1px solid black;
-	font-size: 16px;
+.site-footer p:first-child {
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-.gallery figure img {
-	width: 100%;
-	height: 180px;
-	object-fit: cover;
-	object-position: center;
+.site-footer p:not(:first-child) {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 5px;
 }
 
-.gallery figcaption {
-	text-align: center;
-	padding: 5px;
+/* ------------------------------
+   TABLET & MOBILE
+------------------------------ */
+
+@media screen and (max-width: 900px) {
+
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .site-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .hero {
+        padding: 75px 7%;
+    }
+
+    .hero-visual {
+        width: 270px;
+        height: 300px;
+    }
+
+    .circle-one {
+        width: 260px;
+        height: 260px;
+    }
+
+    .circle-two {
+        width: 200px;
+        height: 200px;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+    }
+
+    .topic-card {
+        min-height: auto;
+    }
 }
 
-.gallery figure:hover figcaption {
-	background-color: lightgray;
-}
+@media screen and (max-width: 600px) {
 
+    .site-header {
+        padding: 18px 15px;
+    }
 
-/* =========================================
-   RESPONSIVE ADJUSTMENT FOR PAGE THREE
-   ========================================= */
+    .site-logo {
+        font-size: 1rem;
+    }
 
-@media screen and (max-width: 700px) {
+    .site-nav {
+        gap: 10px 15px;
+    }
 
-	.page-three aside,
-	.page-three .articles {
-		float: none;
-		width: 100%;
-		margin-right: 0;
-	}
+    .site-nav a {
+        font-size: 0.7rem;
+    }
 
-	.page-three article section figure,
-	.page-three article section figure:nth-of-type(even) {
-		float: none;
-		width: 100%;
-		margin-left: 0;
-		margin-right: 0;
-	}
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 75px 25px;
+        gap: 45px;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-visual {
+        width: 260px;
+        height: 270px;
+    }
+
+    .intro-section,
+    .topics-section {
+        padding: 70px 22px;
+    }
+
+    .takeaway-section {
+        padding: 80px 22px;
+    }
 }
